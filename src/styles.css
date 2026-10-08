@@ -1,0 +1,101 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-river: var(--river);
+  --color-river-soft: var(--river-soft);
+  --color-stone: var(--stone);
+  --color-stone-warm: var(--stone-warm);
+  --color-ochre: var(--ochre);
+  --color-ochre-soft: var(--ochre-soft);
+  --color-cliff: var(--cliff);
+  --color-leaf: var(--leaf);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Palette Cap Evasion — vert rivière, sable, ocre Périgord */
+  --river: oklch(0.38 0.04 200);
+  --river-soft: oklch(0.55 0.05 200);
+  --stone: oklch(0.93 0.015 80);
+  --stone-warm: oklch(0.96 0.01 80);
+  --ochre: oklch(0.72 0.10 65);
+  --ochre-soft: oklch(0.82 0.07 65);
+  --cliff: oklch(0.55 0.04 70);
+  --leaf: oklch(0.50 0.08 145);
+
+  --background: var(--stone-warm);
+  --foreground: var(--river);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--river);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--river);
+  --primary: var(--river);
+  --primary-foreground: var(--stone-warm);
+  --secondary: var(--stone);
+  --secondary-foreground: var(--river);
+  --muted: var(--stone);
+  --muted-foreground: var(--cliff);
+  --accent: var(--ochre);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.38 0.04 200 / 12%);
+  --input: oklch(0.38 0.04 200 / 15%);
+  --ring: var(--ochre);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+}
